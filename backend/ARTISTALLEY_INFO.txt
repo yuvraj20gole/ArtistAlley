@@ -1,0 +1,141 @@
+🎨 ARTISTALLEY PROJECT INFORMATION
+========================================
+
+📁 PROJECT STRUCTURE
+====================
+Root Directory: /Users/yuvrajgole/PycharmProjects/ArtistAlley/
+Backend: /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend/
+Frontend: /Users/yuvrajgole/PycharmProjects/ArtistAlley/frontend/
+
+🔐 DJANGO ADMIN CREDENTIALS
+===========================
+Email: admin@artistalley.com
+Password: admin123
+Username: admin
+
+🌐 ADMIN ACCESS URL
+==================
+http://127.0.0.1:8000/admin/
+http://localhost:8000/admin/
+
+👤 DEMO USER ACCOUNTS
+=====================
+Admin User:
+- Email: admin@artistalley.com
+- Username: admin
+- Password: admin123
+- Status: Superuser (full permissions)
+
+Demo Artist:
+- Email: artist@example.com
+- Username: demo_artist
+- Password: artist123
+- Status: Regular artist user
+
+🗄️ DATABASE INFORMATION
+========================
+Database File: /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend/db.sqlite3
+Backup File: /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend/db.sqlite3.backup
+Size: 110,592 bytes
+
+📊 DATABASE TABLES
+==================
+✅ users_customuser - Custom user model with artist fields
+✅ artists_artistprofile - Artist profiles and information
+✅ artists_artmedium - Art mediums (Oil Painting, Watercolor, etc.)
+✅ artworks_category - Artwork categories (Portrait, Landscape, etc.)
+✅ artworks_artwork - Artwork listings
+✅ artworks_artworkimage - Artwork images
+✅ artworks_favorite - User favorites
+✅ django_migrations - Django migration tracking
+✅ django_content_type - Django content types
+✅ auth_group - User groups
+✅ auth_permission - User permissions
+✅ django_session - User sessions
+
+🎨 SAMPLE DATA INCLUDED
+========================
+Art Mediums:
+- Oil Painting
+- Watercolor
+- Digital Art
+- Sculpture
+- Photography
+
+Categories:
+- Portrait
+- Landscape
+- Abstract
+- Still Life
+- Fantasy
+
+🚀 COMMANDS TO RUN
+==================
+
+Start Django Server:
+cd /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend
+python3 manage.py runserver
+
+Start Frontend (React):
+cd /Users/yuvrajgole/PycharmProjects/ArtistAlley/frontend
+npm run dev
+
+Access Database:
+cd /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend
+sqlite3 db.sqlite3
+
+📋 DJANGO COMMANDS
+==================
+Create Superuser:
+python3 manage.py createsuperuser
+
+Run Migrations:
+python3 manage.py migrate
+
+Make Migrations:
+python3 manage.py makemigrations
+
+Check Django:
+python3 manage.py check
+
+📁 KEY FILES
+============
+Django Settings: /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend/artistalley/settings.py
+Django URLs: /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend/artistalley/urls.py
+User Model: /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend/users/models.py
+Artist Model: /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend/artists/models.py
+Artwork Model: /Users/yuvrajgole/PycharmProjects/ArtistAlley/backend/artworks/models.py
+
+🔧 TECHNICAL DETAILS
+====================
+Python Version: 3.11
+Django Version: 5.2.6
+Database: SQLite3
+Custom User Model: users.CustomUser (email-based login)
+Authentication: JWT + Session
+Frontend: React + TypeScript + Vite + Tailwind CSS
+
+📝 NOTES
+========
+- Custom user model uses EMAIL as login field (not username)
+- Database was manually created with proper Django schema
+- All migrations are properly tracked
+- Admin panel should be accessible at /admin/
+- Server needs to be running to access admin panel
+
+⚠️ TROUBLESHOOTING
+==================
+If Django server won't start:
+1. Check you're in the correct directory (/backend/)
+2. Verify Python and Django are installed
+3. Check for any error messages
+4. Try: python3 manage.py check
+5. Try: python3 manage.py migrate
+
+If admin login fails:
+1. Verify server is running
+2. Check email format (admin@artistalley.com)
+3. Try creating new superuser: python3 manage.py createsuperuser
+
+Generated on: $(date)
+Project: ArtistAlley - Full Stack Art Marketplace
