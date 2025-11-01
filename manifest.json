@@ -1,0 +1,9 @@
+{
+  "name": "ArtistAlley",
+  "short_name": "ArtistAlley",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Discover and buy art from talented artists.",
+  "icons": []
+}
