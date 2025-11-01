@@ -29,13 +29,14 @@ jobs:
         with:
           submodules: false
           fetch-depth: 0
+          sparse-checkout: false
       
-      - name: Remove submodule references
+      - name: Skip submodule sync
         run: |
-          git config --global --remove-section submodule.frontend 2>/dev/null || true
+          # Skip submodule sync entirely
+          git config submodule.frontend.url "" 2>/dev/null || true
+          git config submodule.frontend.active false 2>/dev/null || true
           rm -f .gitmodules 2>/dev/null || true
-          git rm --cached frontend 2>/dev/null || true
-          git add frontend/ 2>/dev/null || true
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
