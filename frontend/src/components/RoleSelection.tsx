@@ -25,7 +25,8 @@ export function RoleSelection({ user, onRoleSelected }: RoleSelectionProps) {
       setIsLoading(true);
       
       // Update user role in backend
-      const response = await fetch('http://localhost:8000/api/auth/profile/', {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+      const response = await fetch(`${API_BASE_URL}/auth/profile/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

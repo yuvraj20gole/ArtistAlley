@@ -1,6 +1,6 @@
 // API service for communicating with Django backend
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
 
 // Google OAuth configuration
 const GOOGLE_CLIENT_ID = 'your-google-client-id'; // This will be set when you get your Google OAuth credentials
