@@ -30,6 +30,11 @@ jobs:
           submodules: false
           fetch-depth: 0
       
+      - name: Disable submodule update
+        run: |
+          git config --global --unset-all submodule.active || true
+          git config --global --remove-section submodule.frontend 2>/dev/null || true
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
