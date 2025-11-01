@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 from datetime import timedelta
 from .config import *
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Serve static files in production
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',  # CORS middleware should be as high as possible
     'django.middleware.common.CommonMiddleware',
@@ -148,7 +150,7 @@ LOGOUT_REDIRECT_URL = '/'
 from .config import GOOGLE_OAUTH2_CLIENT_ID, GOOGLE_OAUTH2_CLIENT_SECRET, GOOGLE_OAUTH2_REDIRECT_URI, CORS_ALLOWED_ORIGINS, CORS_ALLOW_CREDENTIALS
 
 # Session configuration for OAuth
-SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
+SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', 'False').lower() == 'true'  # Set to True in production with HTTPS
 SESSION_COOKIE_HTTPONLY = False  # Allow JavaScript access for OAuth
 SESSION_COOKIE_SAMESITE = 'Lax'  # Use Lax for localhost development
 SESSION_SAVE_EVERY_REQUEST = True
@@ -173,8 +175,8 @@ CORS_ALLOW_HEADERS = [
 ]
 
 # CSRF Configuration for API endpoints
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000', 'http://127.0.0.1:3001']
-CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', 'http://localhost:3000,http://localhost:3001,http://127.0.0.1:3000,http://127.0.0.1:3001,https://yuvraj20gole.github.io').split(',')
+CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE', 'False').lower() == 'true'  # Set to True in production with HTTPS
 CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript access
 CSRF_COOKIE_SAMESITE = 'Lax'  # Use Lax for localhost development
 CSRF_COOKIE_DOMAIN = None  # Allow cookies across localhost ports
