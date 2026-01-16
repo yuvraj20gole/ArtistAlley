@@ -1,0 +1,13 @@
+SECRET_KEY=django-insecure-8k2p9x3m7q1v5w0n4r6t8y0u2i4o6p8s0d2f4h6j8l0z2x4c6v8b0n2m4q6w8e0r
+DEBUG=False
+ALLOWED_HOSTS=artistalley-backend.onrender.com
+DATABASE_URL=<Internal Database URL from PostgreSQL service - will be auto-set when you link the database>
+CORS_ALLOWED_ORIGINS=https://yuvraj20gole.github.io
+FRONTEND_URL=https://yuvraj20gole.github.io/ArtistAlley
+CSRF_TRUSTED_ORIGINS=https://artistalley-backend.onrender.com,https://yuvraj20gole.github.io
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
+GOOGLE_OAUTH2_CLIENT_ID=<your-google-client-id>
+GOOGLE_OAUTH2_CLIENT_SECRET=<your-google-client-secret>
+GOOGLE_OAUTH2_REDIRECT_URI=https://artistalley-backend.onrender.com/api/auth/google/callback/
+
