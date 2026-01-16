@@ -162,7 +162,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cache'  # Use cache backend f
 CORS_ALLOWED_ORIGINS = CORS_ALLOWED_ORIGINS
 CORS_ALLOW_CREDENTIALS = CORS_ALLOW_CREDENTIALS
 # Only allow all origins in development (DEBUG=True), restrict in production
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # Automatically False in production when DEBUG=False
+CORS_ALLOW_ALL_ORIGINS = CONFIG_DEBUG  # Automatically False in production when DEBUG=False
 CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',
