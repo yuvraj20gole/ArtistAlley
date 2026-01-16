@@ -147,7 +147,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Import configuration
-from .config import GOOGLE_OAUTH2_CLIENT_ID, GOOGLE_OAUTH2_CLIENT_SECRET, GOOGLE_OAUTH2_REDIRECT_URI, CORS_ALLOWED_ORIGINS, CORS_ALLOW_CREDENTIALS
+from .config import GOOGLE_OAUTH2_CLIENT_ID, GOOGLE_OAUTH2_CLIENT_SECRET, GOOGLE_OAUTH2_REDIRECT_URI, CORS_ALLOWED_ORIGINS, CORS_ALLOW_CREDENTIALS, DEBUG as CONFIG_DEBUG
 
 # Session configuration for OAuth
 SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', 'False').lower() == 'true'  # Set to True in production with HTTPS
@@ -161,7 +161,8 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cache'  # Use cache backend f
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = CORS_ALLOWED_ORIGINS
 CORS_ALLOW_CREDENTIALS = CORS_ALLOW_CREDENTIALS
-CORS_ALLOW_ALL_ORIGINS = True  # Temporarily allow all origins for development debugging
+# Only allow all origins in development (DEBUG=True), restrict in production
+CORS_ALLOW_ALL_ORIGINS = CONFIG_DEBUG  # Automatically False in production when DEBUG=False
 CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',

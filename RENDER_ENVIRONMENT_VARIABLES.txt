@@ -1,0 +1,18 @@
+# Complete Environment Variables for Render.com
+# Copy and paste these into Render.com → Your Web Service → Environment
+
+SECRET_KEY=kuqpT9pTZjL1yoRD0qUp9CbeXzIsYm-1Fz02lYcdXi9Pd4MD_PvA50J2CDzOyt1d8Pc
+DEBUG=False
+ALLOWED_HOSTS=artistalley-backend.onrender.com
+CORS_ALLOWED_ORIGINS=https://yuvraj20gole.github.io
+FRONTEND_URL=https://yuvraj20gole.github.io/ArtistAlley
+CSRF_TRUSTED_ORIGINS=https://artistalley-backend.onrender.com,https://yuvraj20gole.github.io
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
+GOOGLE_OAUTH2_CLIENT_ID=your-google-client-id
+GOOGLE_OAUTH2_CLIENT_SECRET=your-google-client-secret
+GOOGLE_OAUTH2_REDIRECT_URI=https://artistalley-backend.onrender.com/api/auth/google/callback/
+
+# Note: DATABASE_URL will be automatically set when you link the PostgreSQL database
+# No need to set it manually - Render will do it automatically
+
